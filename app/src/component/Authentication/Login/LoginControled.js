@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function Login() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [errorMessage, setErrorMessage] = useState();
+function LoginControled() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmitHandler = async () => {
     try {
@@ -16,12 +16,10 @@ function Login() {
         }),
       });
 
+      const data = await response.json();
       if (response.ok) {
-        const data = await response.json();
         console.log(data);
       } else {
-        // 
-        const data = await response.json();
         setErrorMessage(data.detail);
       }
     } catch (error) {
@@ -65,4 +63,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginControled;
