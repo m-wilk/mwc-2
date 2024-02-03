@@ -8,6 +8,7 @@ import LoginUncontroled from "./component/Authentication/Login/LoginUncontroled"
 function App() {
   return (
     <div className="App">
+      
       <LoginUncontroled />
     </div>
   );
